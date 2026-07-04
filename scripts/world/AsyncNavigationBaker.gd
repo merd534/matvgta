@@ -14,8 +14,10 @@ func bake_all_async(root: Node) -> void:
 	for region in regions:
 		if not region.navigation_mesh:
 			continue
-		region.navigation_mesh.cell_size = 0.5
-		region.navigation_mesh.cell_height = 0.5
+		# Must match the navigation map's cell size/height (engine default 0.25)
+		# or NavigationServer3D rejects the region with a cell mismatch error.
+		region.navigation_mesh.cell_size = 0.25
+		region.navigation_mesh.cell_height = 0.25
 		region.navigation_mesh.agent_max_climb = 0.5
 		_pending += 1
 

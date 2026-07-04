@@ -133,8 +133,10 @@ func _on_world_generated() -> void:
 		player = CharacterBody3D.new()
 		player.name = "Player"
 		player.set_script(load("res://scripts/player/Player3D.gd"))
-		player.global_position = Vector3(32, 2, 32)
+		# Add to the tree first, THEN set global_position — otherwise
+		# global_position is read before the node is inside the tree.
 		add_child(player)
+		player.global_position = Vector3(32, 2, 32)
 
 	_setup_simulation()
 

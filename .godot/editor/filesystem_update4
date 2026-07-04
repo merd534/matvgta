@@ -1,5 +1,0 @@
-res://scripts/player/Player3D.gd
-res://scripts/systems/DynamicAudio.gd
-res://scripts/world/WorldGenerator3D.gd
-res://scripts/systems/MainScene.gd
-res://scripts/world/VentilationGenerator.gd
