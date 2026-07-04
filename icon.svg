@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128">
+  <rect width="128" height="128" rx="16" fill="#1a1a2e"/>
+  <text x="64" y="72" font-family="monospace" font-size="28" font-weight="bold" fill="#e94560" text-anchor="middle">MGTA</text>
+  <rect x="20" y="85" width="88" height="3" rx="1.5" fill="#0f3460"/>
+  <circle cx="64" cy="45" r="18" fill="none" stroke="#e94560" stroke-width="2"/>
+  <circle cx="64" cy="45" r="8" fill="#e94560" opacity="0.6"/>
+</svg>

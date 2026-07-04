@@ -1,0 +1,12 @@
+ ERROR: res://scripts/systems/SettingsManager.gd:83 - Parse Error: Cannot find member "SCALING_3D_MODE_DISABLED" in base "Viewport".
+  ERROR: res://scripts/systems/SettingsManager.gd:92 - Parse Error: Cannot find member "SCALING_3D_MODE_DISABLED" in base "Viewport".
+  ERROR: res://scripts/systems/SettingsManager.gd:101 - Parse Error: Cannot find member "SCALING_3D_MODE_DISABLED" in base "Viewport".
+  ERROR: res://scripts/systems/SettingsManager.gd:114 - Parse Error: Cannot find member "TONE_MAP_ACES" in base "Environment".
+  ERROR: res://scripts/systems/SettingsManager.gd:175 - Parse Error: Cannot find member "SCALING_3D_MODE_DISABLED" in base "Viewport".
+  ERROR: modules/gdscript/gdscript.cpp:2907 - Failed to load script "res://scripts/systems/SettingsManager.gd" with error "Parse error".
+  ERROR: Failed to create an autoload, script 'res://scripts/systems/SettingsManager.gd' is not compiling.
+--- GDScript language server started on port 6005 ---
+  ERROR: res://scripts/player/StealthSystem.gd:8 - Parse Error: Member "visibility_changed" redefined (original in native class 'Node3D')
+  ERROR: modules/gdscript/gdscript.cpp:2907 - Failed to load script "res://scripts/player/StealthSystem.gd" with error "Parse error".
+  ERROR: res://scripts/world/VentHighlightSystem.gd:25 - Parse Error: Identifier "_on_player_state_changed" not declared in the current scope.
+  ERROR: modules/gdscript/gdscript.cpp:2907 - Failed to load script "res://scripts/world/VentHighlightSystem.gd" with error "Parse error".

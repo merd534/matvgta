@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/systems/MainScene.gd" id="1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="sky_mat"]
+sky_top_color = Color(0.02, 0.01, 0.06, 1)
+sky_horizon_color = Color(0.08, 0.03, 0.15, 1)
+ground_bottom_color = Color(0.01, 0.01, 0.03, 1)
+ground_horizon_color = Color(0.05, 0.02, 0.1, 1)
+
+[sub_resource type="Sky" id="sky_1"]
+sky_material = SubResource("sky_mat")
+
+[sub_resource type="Environment" id="env_1"]
+background_mode = 2
+sky = SubResource("sky_1")
+ambient_light_source = 2
+ambient_light_color = Color(0.08, 0.06, 0.12, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 0.8
+glow_bloom = 0.15
+fog_enabled = true
+fog_light_color = Color(0.05, 0.03, 0.1, 1)
+fog_density = 0.005
+fog_sky_affect = 0.3
+
+[sub_resource type="CapsuleShape3D" id="capsule_1"]
+radius = 0.35
+height = 1.8
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1")
+
+[node name="WorldGenerator" type="Node3D" parent="."]
+
+[node name="MainLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 50, 0)
+light_color = Color(0.7, 0.6, 1, 1)
+light_energy = 1.2
+shadow_enabled = true
+directional_shadow_max_distance = 250.0
+
+[node name="FillLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.5, 0, -0.866, 0, 1, 0, 0.866, 0, -0.5, 0, 30, 0)
+light_color = Color(0.3, 0.4, 0.6, 1)
+light_energy = 0.4
+shadow_enabled = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("env_1")
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("capsule_1")
+
+[node name="LootSpawner" type="Node3D" parent="."]

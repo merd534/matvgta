@@ -1,0 +1,28 @@
+### PHASE: Ultra-Detailed 3D City & Procedural Interior Asset Generation (Shadows of Doubt Style)
+
+We are pausing to massively upgrade our procedural world generation. We need to improve the generation detail by 10x and programmatically create a massive library of detailed 3D interior and exterior assets using primitive meshes, so the generator has rich materials to build with.
+
+Please implement the following architectural upgrades:
+
+1. Detailed City Layout & Infrastructure:
+   - Upgrade `WorldGenerator3D.gd` to generate complex road networks (intersections, T-junctions, crosswalks, sidewalks).
+   - Add street furniture zoning: procedurally place streetlights, neon sign poles, trash dumpsters, and alleyways between buildings.
+   - Buildings must have varied shapes (L-shaped, U-shaped, step-backs on higher floors for penthouses) instead of simple rectangular towers.
+
+2. Comprehensive Procedural Asset Library (`ProceduralAssetFactory.gd`):
+   - Write a dedicated programmatic mesh factory that constructs dozens of unique interactive 3D objects using dynamically combined ArrayMesh, CSG, BoxMesh, and CylinderMesh primitives.
+   - Interior Furniture: Sofas, office desks, chairs, filing cabinets, beds, toilets, sinks, kitchen counters, and ceiling neon fixtures.
+   - Exterior Props: Electrical boxes (hackable), security barriers, decorative neon shop signs, vents/pipes running along outside walls.
+   - Electronic Items: Desktop computers (with separate screens/keyboards), CCTV wall mounts, alarm speakers, electronic door keypads.
+
+3. Granular Architectural & Room Generation:
+   - Implement realistic floor plans: Every floor must be divided into specific room types (Apartments, Offices, Restaurants, Corridors, Stairwells, Elevator Shafts).
+   - Each room type must query the `ProceduralAssetFactory` to spawn appropriate clutter. Offices get desks, computers, and trash bins; apartments get beds, TVs, and kitchens.
+   - Doors, windows, and ventilation intake registers must be physically cut into walls using correct coordinate offsets.
+
+4. Smart Clutter and Environmental Storytelling:
+   - Implement a randomization budget for every room. Scatter loose items like papers on desks, mugs, folders, and heist loot inside containers.
+   - Wealthy districts receive high-end asset variations (e.g., larger ornate desks, executive chairs, safes embedded inside walls behind paintings).
+
+---
+CURRENT OBJECTIVE: Write the `ProceduralAssetFactory.gd` script to programmatically generate the 3D meshes for at least 15 core interior/exterior items, and upgrade the room-filling logic in `WorldGenerator3D.gd` to utilize these assets. Ensure all meshes have proper structural alignment and collision layers. Do not advance to any other systems until this 10x detail upgrade is fully coded.

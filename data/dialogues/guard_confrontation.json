@@ -1,0 +1,110 @@
+{
+	"start": "greeting",
+	"nodes": {
+		"greeting": {
+			"text": "Hey, you! What are you doing in this restricted area?",
+			"choices": [
+				{
+					"id": "bribe",
+					"text": "I'm a new employee. Here, take this as a welcome gift.",
+					"cost": 200,
+					"next": "bribe_result",
+					"action": "bribe_guard"
+				},
+				{
+					"id": "deceive",
+					"text": "I'm the sanitary inspector. I need to check the ventilation.",
+					"skill_check": "charisma",
+					"skill_required": 6,
+					"next": "deceive_result"
+				},
+				{
+					"id": "fake_id",
+					"text": "Here's my access card.",
+					"requires_item": "fake_id",
+					"next": "fake_id_result"
+				},
+				{
+					"id": "threaten",
+					"text": "You don't want to know what happens if you don't let me through.",
+					"skill_check": "charisma",
+					"skill_required": 8,
+					"next": "threaten_result"
+				},
+				{
+					"id": "leave",
+					"text": "Sorry, wrong building.",
+					"next": "end"
+				}
+			]
+		},
+		"bribe_result": {
+			"text": "Well... I didn't see anything. You have 5 minutes.",
+			"choices": [
+				{
+					"id": "thanks",
+					"text": "Appreciate it.",
+					"next": "end",
+					"gives": ["guard_blind_eye"]
+				}
+			]
+		},
+		"deceive_result": {
+			"text": "A sanitary inspector? At this hour? ...Alright, go ahead. But be quick.",
+			"choices": [
+				{
+					"id": "thanks",
+					"text": "Thank you for your cooperation.",
+					"next": "end"
+				}
+			]
+		},
+		"deceive_fail": {
+			"text": "You don't look like any inspector I've seen. Get out of here!",
+			"choices": [
+				{
+					"id": "leave",
+					"text": "I'm going, I'm going...",
+					"next": "end"
+				}
+			]
+		},
+		"fake_id_result": {
+			"text": "Hmm, this looks legit. Alright, go on in.",
+			"choices": [
+				{
+					"id": "enter",
+					"text": "Thanks.",
+					"next": "end",
+					"action": "disable_camera_alert"
+				}
+			]
+		},
+		"threaten_result": {
+			"text": "W-what? Fine! Just... don't hurt me!",
+			"choices": [
+				{
+					"id": "smug",
+					"text": "Smart choice.",
+					"next": "end",
+					"action": "guard_flee"
+				}
+			]
+		},
+		"threaten_fail": {
+			"text": "You think you can scare me? I'm calling backup!",
+			"choices": [
+				{
+					"id": "run",
+					"text": "(Run away)",
+					"next": "end",
+					"action": "trigger_alarm_medium"
+				}
+			]
+		},
+		"end": {
+			"text": "",
+			"choices": []
+		}
+	}
+}

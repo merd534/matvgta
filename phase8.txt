@@ -1,0 +1,4 @@
+### PHASE 8: Stealth Takedowns, Crowd Reaction, Traffic Simulation & Visual Juice
+1. Close-Quarter Stealth Takedown (`StealthCombat3D.gd`): Implement a close-quarters takedown mechanic. When approaching any human NPC (Guard or Civilian) from behind in Crouch/Stealth mode, a prompt appears. Pressing the key triggers a non-lethal strangle/choke animation, knocking the target unconscious. 
+2. Social Stealth & Witness System: If a takedown or any crime is performed in the line of sight of other civilian NPCs, it triggers a "Panic" state. Witnesses will scream, flee, and immediately call the police, rapidly increasing your Wanted level and triggering an area-wide alert.
+3. Body Disposal in Vents: Unconscious bodies can be picked up, carried, and hidden inside the procedural 3D ventilation shafts or dumpsters to prevent patrolling guards from discovering them and sounding the alarm.
